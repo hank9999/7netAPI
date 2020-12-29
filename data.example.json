@@ -1,0 +1,34 @@
+{
+    "a": {
+        "name": "校区1",
+        "schoolGuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "list": {
+            "考试2": {
+                "grade": "G1",
+                "examGuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "ruCode": "3709000"
+            },
+            "考试1": {
+                "grade": "G1",
+                "examGuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "ruCode": "3709000"
+            }
+        }
+    },
+    "b": {
+        "name": "校区2",
+        "schoolGuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "list": {
+            "考试2": {
+                "grade": "G1",
+                "examGuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "ruCode": "3709000"
+            },
+            "考试1": {
+                "grade": "G1",
+                "examGuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                "ruCode": "3709000"
+            }
+        }
+    }
+}
