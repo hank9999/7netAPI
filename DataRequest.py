@@ -84,12 +84,15 @@ def grades(campus, studentCode, examName):
 
     for i in alldata['subjects']['subjects']:
         if i['km'] != '总分':
-            data['questions'][i['km']] = i['question']['THs']
-            for n in data['questions'][i['km']]:
-                if 'radar' in n:
-                    del n['radar']
-                if 'objective' in n:
-                    del n['objective']
+            if i['code'] != 0:
+                data['questions'][i['km']] = []
+            else:
+                data['questions'][i['km']] = i['question']['THs']
+                for n in data['questions'][i['km']]:
+                    if 'radar' in n:
+                        del n['radar']
+                    if 'objective' in n:
+                        del n['objective']
 
     return [200, json.dumps({'status': 200, 'message': 'success', 'data': data})]
 

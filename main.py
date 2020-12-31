@@ -2,6 +2,7 @@ import json
 from aiohttp import web
 import datetime
 import DataRequest as dr
+from config import host, port
 
 routes = web.RouteTableDef()
 
@@ -58,4 +59,4 @@ async def get_handler(request):
 if __name__ == '__main__':
     app = web.Application()
     app.add_routes(routes)
-    web.run_app(app, host='127.0.0.1', port=3001)
+    web.run_app(app, host=host, port=port)
