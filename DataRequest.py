@@ -70,12 +70,21 @@ def grades(campus, studentCode, examName):
     data['exam']['total'] = alldata['grades']['report']['total']
     data['exam']['class'] = alldata['subjects']['unitCode'].replace(grade, '')
 
+    rankingFile = 'ranking/' + str(examData[campus]['list'][examName]['examGuid']) + '.json'
+    ranking = -1
+    if os.path.exists(rankingFile):
+        with open(rankingFile, 'r', encoding='utf-8') as f4:
+            rankingData = json.loads(f4.read())
+        if studentCode in rankingData:
+            ranking = rankingData[studentCode]
+
     data['grades']['all'] = {
         'Score': alldata['grades']['report']['myScore'],
         'fullScore': alldata['grades']['report']['fullScore'],
         'grade': alldata['grades']['report']['grade'],
         'classAvg': alldata['grades']['report']['classAvg'],
-        'schoolAvg': alldata['grades']['report']['schoolAvg']
+        'schoolAvg': alldata['grades']['report']['schoolAvg'],
+        'ranking': ranking
     }
     data['grades']['subjects'] = alldata['grades']['report']['otherKM']
     for i in data['grades']['subjects']:
